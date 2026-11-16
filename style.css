@@ -1,0 +1,808 @@
+/* Dark Theme Styling for Ninth OATH GDD */
+:root {
+    --bg-dark: #121212;
+    --card-bg: #1E1E24;
+    --card-bg-alt: #282830;
+    --text-primary: #EEEEEE;
+    --text-muted: #AAAAAA;
+    --gold-accent: #F59E0B;
+    --gold-bright: #FFD700;
+    
+    /* Blue Theme for Classes */
+    --class-blue: #3B82F6;
+    --class-header-bg: #1E3A8A;
+    
+    /* Race Theme Colors */
+    --color-human: #3B82F6;
+    --color-elf: #10B981;
+    --color-dwarf: #D97706;
+    --color-beastskin: #F59E0B;
+    --color-fiery: #EF4444;
+    --color-celestial: #EC4899;
+    --color-shadow: #8B5CA6;
+    --color-golem: #6B7280;
+    --color-ocean: #06B6D4;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 2px solid var(--gold-accent);
+    padding-bottom: 20px;
+}
+
+h1 {
+    color: var(--gold-accent);
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+h2 {
+    color: var(--gold-accent);
+    border-bottom: 1px solid #333;
+    padding-bottom: 8px;
+    margin-top: 40px;
+}
+
+.rule {
+    background-color: var(--card-bg);
+    padding: 12px 18px;
+    border-left: 4px solid var(--gold-accent);
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+/* Class Tables Styling */
+.card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.class-header {
+    color: var(--class-blue);
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.class-evolution-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.class-evo-card {
+    margin: 0;
+    position: relative;
+    border-top: 4px solid #555;
+    overflow: hidden;
+}
+
+.class-evo-card::before {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 3px 7px;
+    border-radius: 999px;
+    color: #fff;
+    background: rgba(255,255,255,0.08);
+    z-index: 1;
+}
+
+.class-evo-card.phase-launch {
+    border-top-color: #3B82F6;
+    background: linear-gradient(180deg, rgba(59, 130, 246, 0.08), rgba(30,30,36,1));
+}
+
+.class-evo-card.phase-launch::before {
+    content: "Launch Phase";
+    background: rgba(59, 130, 246, 0.24);
+}
+
+.class-evo-card.phase-update1 {
+    border-top-color: #F59E0B;
+    background: linear-gradient(180deg, rgba(245, 158, 11, 0.10), rgba(30,30,36,1));
+}
+
+.class-evo-card.phase-update1::before {
+    content: "Update 1";
+    background: rgba(245, 158, 11, 0.22);
+}
+
+.class-evo-card.phase-update2 {
+    border-top-color: #8B5CF6;
+    background: linear-gradient(180deg, rgba(139, 92, 246, 0.10), rgba(30,30,36,1));
+}
+
+.class-evo-card.phase-update2::before {
+    content: "Update 2";
+    background: rgba(139, 92, 246, 0.22);
+}
+
+.class-evo-card.phase-update3 {
+    border-top-color: #10B981;
+    background: linear-gradient(180deg, rgba(16, 185, 129, 0.10), rgba(30,30,36,1));
+}
+
+.class-evo-card.phase-update3::before {
+    content: "Update 3";
+    background: rgba(16, 185, 129, 0.22);
+}
+
+.class-evo-card.phase-update4 {
+    border-top-color: #06B6D4;
+    background: linear-gradient(180deg, rgba(6, 182, 212, 0.10), rgba(30,30,36,1));
+}
+
+.class-evo-card.phase-update4::before {
+    content: "Update 4";
+    background: rgba(6, 182, 212, 0.22);
+}
+
+.class-evo-card.phase-update5 {
+    border-top-color: #EC4899;
+    background: linear-gradient(180deg, rgba(236, 72, 153, 0.10), rgba(30,30,36,1));
+}
+
+.class-evo-card.phase-update5::before {
+    content: "Update 5";
+    background: rgba(236, 72, 153, 0.22);
+}
+
+.class-evo-card.phase-update6 {
+    border-top-color: #F97316;
+    background: linear-gradient(180deg, rgba(249, 115, 22, 0.10), rgba(30,30,36,1));
+}
+
+.class-evo-card.phase-update6::before {
+    content: "Update 6";
+    background: rgba(249, 115, 22, 0.22);
+}
+
+.unique-class-path {
+    margin-top: 28px;
+    padding: 18px;
+    border: 1px solid rgba(255, 215, 0, 0.45);
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(30, 30, 36, 0.7));
+    box-shadow: 0 0 22px rgba(245, 158, 11, 0.12);
+}
+
+.unique-class-heading {
+    margin: 0 0 16px;
+    color: var(--gold-bright);
+    font-size: 1.15rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.class-evo-card.phase-unique {
+    border-top-color: var(--gold-bright);
+    background: linear-gradient(180deg, rgba(245, 158, 11, 0.16), rgba(30, 30, 36, 1));
+    box-shadow: 0 0 18px rgba(245, 158, 11, 0.16);
+}
+
+.class-evo-card.phase-unique::before {
+    content: "Unique";
+    background: rgba(245, 158, 11, 0.32);
+    color: var(--gold-bright);
+}
+
+.class-evo-card.phase-unique .class-evo-header h3 {
+    color: var(--gold-bright);
+}
+
+.class-evo-card.phase-unique .class-evolutions {
+    border-image: linear-gradient(180deg, var(--gold-bright), var(--gold-accent)) 1;
+    background: linear-gradient(90deg, rgba(245, 158, 11, 0.14), rgba(245, 158, 11, 0.04));
+}
+
+.class-evo-card.phase-unique .evo-label,
+.class-evo-card.phase-unique .evo-entry strong {
+    color: var(--gold-bright);
+}
+
+.class-evo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    border-bottom: 1px solid #2D2D35;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+}
+
+.class-evo-header h3 {
+    margin: 0;
+    color: var(--class-blue);
+    font-size: 1.15rem;
+}
+
+.class-evo-header span {
+    color: var(--text-muted);
+    font-size: 0.76rem;
+    text-align: right;
+}
+
+.class-evo-summary {
+    margin: 0 0 12px;
+    color: #D9D9D9;
+    font-size: 0.9rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+tbody tr {
+    border-bottom: 1px solid #50505B;
+}
+
+tbody tr:last-child {
+    border-bottom: 0;
+}
+
+th {
+    background-color: var(--class-header-bg);
+    color: #FFFFFF;
+    text-align: left;
+    padding: 12px;
+    font-size: 0.95rem;
+}
+
+td {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+}
+
+tr:nth-child(even) {
+    background-color: var(--card-bg-alt);
+}
+
+tr.highlight-unique {
+    background-color: rgba(245, 158, 11, 0.15);
+    border-left: 3px solid var(--gold-accent);
+}
+
+tr.highlight-unique td:first-child {
+    color: var(--gold-accent);
+    font-weight: bold;
+}
+
+/* Race Grid Cards Styling */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.race-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 18px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    border-top: 4px solid #555;
+    display: flex;
+    flex-direction: column;
+}
+
+.race-card h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.race-card p {
+    margin: 6px 0;
+    font-size: 0.9rem;
+}
+
+.badge {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+    border-radius: 12px;
+    color: #FFF;
+    background-color: rgba(255,255,255,0.15);
+}
+
+.badge-gold {
+    background-color: var(--gold-accent);
+    color: #121212;
+    font-weight: bold;
+}
+
+/* Animal Category Wrapper - Full Width One-Line Grouping */
+.animal-category-wrapper {
+    grid-column: 1 / -1;
+    background: rgba(245, 158, 11, 0.05);
+    border: 1px solid var(--color-beastskin);
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px 0;
+}
+
+.category-header {
+    color: var(--color-beastskin);
+    margin: 0 0 12px 0;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.animal-inline-container {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+}
+
+.animal-inline-container .race-card {
+    flex: 1 1 0px;
+    min-width: 300px;
+    margin: 0;
+}
+
+.subline-traits {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 6px 0 !important;
+}
+
+.trait-tag {
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: #DDD;
+}
+
+/* Color thematic variations */
+.human { border-top-color: var(--color-human); }
+.human h3 { color: var(--color-human); }
+
+.highlight-gold-card {
+    border-top-color: var(--gold-bright) !important;
+    background: linear-gradient(180deg, #25231C 0%, #1E1E24 100%);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+}
+
+.highlight-gold-card h3 {
+    color: var(--gold-bright) !important;
+}
+
+.elf { border-top-color: var(--color-elf); }
+.elf h3 { color: var(--color-elf); }
+
+.dwarf { border-top-color: var(--color-dwarf); }
+.dwarf h3 { color: var(--color-dwarf); }
+
+.beastskin { border-top-color: var(--color-beastskin); }
+.beastskin h3 { color: var(--color-beastskin); }
+
+.fiery { border-top-color: var(--color-fiery); }
+.fiery h3 { color: var(--color-fiery); }
+
+.celestial { border-top-color: var(--color-celestial); }
+.celestial h3 { color: var(--color-celestial); }
+
+.shadow { border-top-color: var(--color-shadow); }
+.shadow h3 { color: var(--color-shadow); }
+
+.golem { border-top-color: var(--color-golem); }
+.golem h3 { color: var(--color-golem); }
+
+.ocean { border-top-color: var(--color-ocean); }
+.ocean h3 { color: var(--color-ocean); }
+
+/* Evolution Box Styling */
+.evolution-box {
+    margin-top: 15px;
+    padding: 12px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-left: 3px solid var(--gold-accent);
+    border-radius: 4px;
+}
+
+.evolution-box h4 {
+    margin: 0 0 6px 0;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--gold-accent);
+}
+
+.evolution-human h4 {
+    color: var(--gold-bright);
+}
+
+.evolution-quote {
+    font-style: italic;
+    color: #E0E0E0;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+}
+
+.evolution-human .evolution-quote {
+    color: var(--gold-bright);
+    font-weight: 600;
+}
+
+.evolution-box ul {
+    margin: 0;
+    padding-left: 18px;
+    font-size: 0.85rem;
+}
+
+.evolution-box li {
+    margin-bottom: 4px;
+}
+
+.race-evolution {
+    margin: 6px 0;
+    border: 1px solid #383842;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.035);
+}
+
+.race-evolution > summary {
+    padding: 10px 12px;
+    color: var(--gold-bright);
+    cursor: pointer;
+    font-weight: 700;
+    list-style: none;
+}
+
+.race-evolution > summary::-webkit-details-marker {
+    display: none;
+}
+
+.race-evolution > summary::after {
+    content: "+";
+    float: right;
+    margin-left: 12px;
+    color: var(--gold-accent);
+    font-size: 1.15rem;
+    line-height: 1;
+}
+
+.race-evolution[open] > summary::after {
+    content: "−";
+}
+
+.race-evolution-description {
+    padding: 0 12px 12px;
+    color: var(--text-muted);
+}
+
+.race-evolution-description p {
+    margin: 0;
+}
+
+/* Race kind grouping */
+.race-kind-group {
+    grid-column: 1 / -1;
+    margin: 12px 0 18px;
+    padding: 16px;
+    border: 1px solid #383842;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.025);
+}
+.race-kind-header {
+    margin: 0 0 14px !important;
+    padding-bottom: 8px;
+    color: var(--gold-accent);
+    border-bottom: 1px solid #383842;
+    font-size: 1.15rem;
+    letter-spacing: .4px;
+}
+.race-kind-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+}
+@media (max-width: 600px) {
+    body { padding: 10px; }
+    .race-kind-group { padding: 10px; }
+    table { display: block; overflow-x: auto; }
+    .image-gallery { grid-template-columns: 1fr; }
+}
+ 
+/* ===== CLASS EVOLUTION INLINE ===== */
+
+.class-evolutions {
+    margin: 10px 0 16px;
+    padding: 0 0 0 12px;
+    border-left: 3px solid transparent;
+    border-image: linear-gradient(
+        180deg,
+        #9d7cff,
+        #38d9c5
+    ) 1;
+    background: linear-gradient(
+        90deg,
+        rgba(125, 95, 220, 0.12),
+        rgba(38, 190, 174, 0.045)
+    );
+    border-radius: 0 9px 9px 0;
+}
+
+.evo-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #a99aff;
+    font-weight: 800;
+    padding: 10px 12px 2px;
+}
+
+.evo-entry {
+    padding: 8px 12px 10px;
+    border-bottom: 1px solid rgba(160, 150, 220, 0.14);
+}
+
+.evo-entry:last-child {
+    border-bottom: 0;
+}
+
+.evo-entry strong {
+    color: #e5dcff;
+    font-size: 1rem;
+}
+
+.evo-origin {
+    color: #91a1ba;
+    font-size: 0.8rem;
+}
+
+.evo-spec {
+    color: #83dfd2;
+    font-size: 0.88rem;
+    margin-top: 4px;
+}
+
+.worldbuilding-section {
+    margin-top: 36px;
+}
+
+.worldbuilding-panel {
+    min-height: 180px;
+    padding: 20px;
+    background: var(--card-bg);
+    border: 1px solid #383842;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.section-placeholder {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+details.collapsible-section > summary,
+details.collapsible-card > summary {
+    cursor: pointer;
+    list-style: none;
+}
+
+details.collapsible-section > summary::-webkit-details-marker,
+details.collapsible-card > summary::-webkit-details-marker {
+    display: none;
+}
+
+details.collapsible-section > summary::after,
+details.collapsible-card > summary::after {
+    content: "+";
+    float: right;
+    margin-left: 12px;
+    color: var(--gold-accent);
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+details.collapsible-section[open] > summary::after,
+details.collapsible-card[open] > summary::after {
+    content: "−";
+}
+
+details.collapsible-section > summary h2 {
+    display: inline-block;
+    margin: 40px 0 0;
+}
+
+details.collapsible-card > summary h3 {
+    display: inline-block;
+}
+
+.collapsible-content {
+    min-width: 0;
+}
+
+.collapsible-section > .collapsible-content {
+    padding-top: 16px;
+}
+
+.collapsible-card > .collapsible-content {
+    padding-top: 4px;
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.image-placeholder {
+    margin: 0;
+    padding: 12px;
+    background: var(--card-bg);
+    border: 1px dashed #666675;
+    border-radius: 8px;
+}
+
+.music-track figcaption {
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.music-track audio {
+    width: 100%;
+}
+
+.music-file-link {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--class-blue);
+}
+
+.image-placeholder-frame {
+    min-height: 180px;
+    display: grid;
+    place-items: center;
+    background: var(--card-bg-alt);
+    color: var(--text-muted);
+    border-radius: 5px;
+}
+
+.image-placeholder-frame img {
+    max-width: 100%;
+    max-height: 420px;
+    object-fit: contain;
+    cursor: zoom-in;
+}
+
+.photo-viewer {
+    position: fixed;
+    inset: 0;
+    box-sizing: border-box;
+    max-width: none;
+    max-height: none;
+    width: 100%;
+    height: 100%;
+    padding: 64px 24px 24px;
+    border: 0;
+    background: rgba(10, 10, 13, 0.96);
+    color: var(--text-primary);
+    overflow: auto;
+}
+
+.photo-viewer::backdrop {
+    background: rgba(0, 0, 0, 0.88);
+}
+
+.photo-viewer-close {
+    position: fixed;
+    top: 16px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.14);
+    color: #fff;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.photo-viewer-tools {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.photo-draw-toggle {
+    padding: 8px 14px;
+    border: 1px solid var(--gold-accent);
+    border-radius: 6px;
+    background: var(--card-bg);
+    color: var(--gold-bright);
+    cursor: pointer;
+}
+
+.photo-draw-toggle[aria-pressed="true"] {
+    background: var(--gold-accent);
+    color: #121212;
+}
+
+.photo-viewer-image {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.photo-viewer-image img {
+    display: block;
+    max-width: min(92vw, 1400px);
+    max-height: calc(100vh - 150px);
+    object-fit: contain;
+}
+
+.photo-viewer-image canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    touch-action: none;
+    pointer-events: none;
+}
+
+.photo-viewer-image canvas.drawing-enabled {
+    pointer-events: auto;
+    cursor: crosshair;
+}
+
+.image-placeholder figcaption {
+    padding-top: 10px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.worldbuilding-section code {
+    color: var(--gold-bright);
+    overflow-wrap: anywhere;
+}
+
+.extra-evolutions {
+    border: 1px solid rgba(157, 124, 255, 0.35);
+}
